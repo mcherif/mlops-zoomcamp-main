@@ -31,7 +31,7 @@ def load_pickle(filename: str):
 )
 def run_optimization(data_path: str, num_trials: int):
     mlflow.set_tracking_uri("http://127.0.0.1:5000")
-    mlflow.set_experiment("rf-hyperopt")
+    mlflow.set_experiment("random-forest-hyperopt")
 
     X_train, y_train = load_pickle(os.path.join(data_path, "train.pkl"))
     X_val, y_val = load_pickle(os.path.join(data_path, "val.pkl"))

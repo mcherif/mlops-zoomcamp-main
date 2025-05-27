@@ -8,7 +8,7 @@ from mlflow.tracking import MlflowClient
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import root_mean_squared_error
 
-HPO_EXPERIMENT_NAME = "random-forest-hyperopt"
+HPO_EXPERIMENT_NAME = "rf-hyperopt"
 EXPERIMENT_NAME = "random-forest-best-models"
 RF_PARAMS = ['max_depth', 'n_estimators', 'min_samples_split', 'min_samples_leaf', 'random_state']
 
@@ -82,7 +82,7 @@ def run_register_model(data_path: str, top_n: int):
     run_id = best_run.info.run_id
     model_uri = f"runs:/{run_id}/model"
     mlflow.register_model(model_uri, name="random-forest-best-models")
-
+    print(f"Registered model from run {run_id} with test RMSE: {best_run.data.metrics['test_rmse']}")
 
 if __name__ == '__main__':
     run_register_model()
