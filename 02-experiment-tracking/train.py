@@ -1,15 +1,15 @@
 import os
 import pickle
 import click
-import numpy as np
+#import numpy as np
 import mlflow
 import sklearn
 
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import root_mean_squared_error
 
-mlflow.set_tracking_uri("sqlite:///mlflow2.db")
-mlflow.set_experiment("nyc-greentaxi-experiment2")
+mlflow.set_tracking_uri("sqlite:///mlflow.db")
+mlflow.set_experiment("nyc-greentaxi-experiment")
 
 # Enable autologging to track parameters, metrics, and models
 mlflow.sklearn.autolog()
@@ -39,11 +39,9 @@ def run_train(data_path: str):
         rf.fit(X_train, y_train)
         y_pred = rf.predict(X_val)
 
-        rmse = mean_squared_error(y_val, y_pred, squared=False)
-        #mse = mean_squared_error(y_val, y_pred)
-        #rmse = np.sqrt(mse)                       # take square root manually
-        #mlflow.log_metric("rmse", rmse)
-        #print(f"RMSE: {rmse}")
+        #rmse = mean_squared_error(y_val, y_pred, squared=False)
+        rmse = root_mean_squared_error(y_val, y_pred)
+
 
 
 if __name__ == '__main__':
