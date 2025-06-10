@@ -12,7 +12,7 @@
   <img src="https://markdown-videos-api.jorgenkh.no/youtube/3_Uu0rInxWI">
 </a>
 
-## 3.3 Using an Orchistrator
+## 3.3 Using an Orchestrator
 
 There's no video for this unit, you can 
 
