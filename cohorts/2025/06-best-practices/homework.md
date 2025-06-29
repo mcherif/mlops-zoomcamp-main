@@ -4,7 +4,7 @@ In this homework, we'll take the ride duration prediction model
 that we deployed in batch mode in homework 4 and improve the 
 reliability of our code with unit and integration tests. 
 
-You'll find the starter code in the [homework](homework/) directory.
+You'll find the starter code in the [homework](https://github.com/DataTalksClub/mlops-zoomcamp/tree/main/cohorts/2025/06-best-practices/homework/) directory.
 
 
 ## Q1. Refactoring
